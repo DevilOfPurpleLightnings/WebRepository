@@ -59,7 +59,7 @@ function triangle(value1, type1, value2, type2) {
             a = c * Math.sin(a_angle * Math.PI / 180);
             b = c * Math.sin(b_angle * Math.PI / 180);
         } else {
-            retun "Nice try!";
+            return "Nice try!";
             check = false
         }
         if (check) {
