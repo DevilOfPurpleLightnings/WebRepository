@@ -69,12 +69,12 @@ function triangle(value1, type1, value2, type2) {
                 console.log("c = " + c);
                 console.log("alpha = " + a_angle);
                 console.log("beta = " + b_angle);
-                retun "success";
+                return "success";
             }else {
-                retun "failed";
+                return "failed";
             }
         }
     } else {
-        retun "Zero or negative input";
+        return "Zero or negative input";
     }
 }
