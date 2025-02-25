@@ -69,12 +69,6 @@ function triangle(value1, type1, value2, type2) {
                 console.log("c = " + c);
                 console.log("alpha = " + a_angle);
                 console.log("beta = " + b_angle);
-                console.log((a_angle > 0.0) && (b_angle > 0.0));
-                console.log((a_angle < 90.0) && (b_angle < 90.0));
-                console.log((b_angle + a_angle == 90.0));
-                console.log((a < c) && (b < c));
-                console.log((a + b > c) && (b + c > a) && (c + a > b));
-                console.log((c * c) + " = " + ((a * a) + (b * b)));
                 console.log("success")
             }else {
                 console.log("failed")
