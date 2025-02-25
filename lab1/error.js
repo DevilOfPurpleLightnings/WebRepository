@@ -59,7 +59,7 @@ function triangle(value1, type1, value2, type2) {
             a = c * Math.sin(a_angle * Math.PI / 180);
             b = c * Math.sin(b_angle * Math.PI / 180);
         } else {
-            console.log("Nice try!");
+            retun "Nice try!";
             check = false
         }
         if (check) {
@@ -69,12 +69,12 @@ function triangle(value1, type1, value2, type2) {
                 console.log("c = " + c);
                 console.log("alpha = " + a_angle);
                 console.log("beta = " + b_angle);
-                console.log("success")
+                retun "success";
             }else {
-                console.log("failed")
+                retun "failed";
             }
         }
     } else {
-        console.log("Zero or negative input")
+        retun "Zero or negative input";
     }
 }
