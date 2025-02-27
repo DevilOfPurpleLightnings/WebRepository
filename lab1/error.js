@@ -7,8 +7,6 @@ function triangle(value1, type1, value2, type2) {
     c = 0;
     a_angle = 0;
     b_angle = 0;
-    c_angle = 90;
-    check = true;
     if (value1 > 0 && value2 > 0) {
         if((type1 === "adjacent angle" || type1 === "opposite angle" || type1 === "angle") && value1 > 90){
             return "Zero or negative input";
@@ -77,38 +75,36 @@ function triangle(value1, type1, value2, type2) {
                 b = c * Math.sin(b_angle * Math.PI / 180);
                 b = Number(b.toFixed(4));
             } else {
-                return "Nice try! Go read the instructions.";
-                check = false
+                console.log("Nice try! Go read the instructions again!");
+                return "failed";
             }
-            if (check) {
-                if ((a_angle > 0.0) && (b_angle > 0.0) && (a_angle < 90.0) && (b_angle < 90.0) && (b_angle + a_angle == 90.0) && (a < c) && (b < c) && (a + b > c) && (b + c > a) && (c + a > b)) {
-                    console.log("a = " + a);
-                    console.log("b = " + b);
-                    console.log("c = " + c);
-                    console.log("alpha = " + a_angle);
-                    console.log("beta = " + b_angle);
-                    return "success";
-                }else {
-                    if((a_angle < 0.0) && (a_angle >= 90.0)){
-                        console.log("alpha is less then 0 or greater then or equal to 90")
-                    }
-                    if((b_angle < 0.0) && (b_angle >= 90.0)){
-                        console.log("beta is less then 0 or greater then or equal to 90")
-                    }
-                    if(b_angle + a_angle != 90.0){
-                        console.log("(alpha + beta) does not equal 90")
-                    }
-                    if((a > c)){
-                        console.log("leg(a) is greater than hypotenuse(c)")
-                    }
-                    if((b > c)){
-                        console.log("leg(b) is greater than hypotenuse(c)")
-                    }
-                    if((a + b < c) || (b + c < a) || (c + a < b)){
-                        console.log("The triangle inequality is not fulfilled")
-                    }
-                    return "failed";
+            if ((a_angle > 0.0) && (b_angle > 0.0) && (a_angle < 90.0) && (b_angle < 90.0) && (b_angle + a_angle == 90.0) && (a < c) && (b < c) && (a + b > c) && (b + c > a) && (c + a > b)) {
+                console.log("a = " + a);
+                console.log("b = " + b);
+                console.log("c = " + c);
+                console.log("alpha = " + a_angle);
+                console.log("beta = " + b_angle);
+                return "success";
+            }else {
+                if((a_angle < 0.0) && (a_angle >= 90.0)){
+                    console.log("alpha is less then 0 or greater then or equal to 90")
                 }
+                if((b_angle < 0.0) && (b_angle >= 90.0)){
+                    console.log("beta is less then 0 or greater then or equal to 90")
+                }
+                if(b_angle + a_angle != 90.0){
+                    console.log("(alpha + beta) does not equal 90")
+                }
+                if((a > c)){
+                    console.log("leg(a) is greater than hypotenuse(c)")
+                }
+                if((b > c)){
+                    console.log("leg(b) is greater than hypotenuse(c)")
+                }
+                if((a + b < c) || (b + c < a) || (c + a < b)){
+                    console.log("The triangle inequality is not fulfilled")
+                }
+                return "failed";
             }
         }
     } else {
