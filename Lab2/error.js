@@ -17,16 +17,18 @@ car1.drive = function(){
 }
 
 
-car2 = new Object();
-car2.color = "black";
-car2.maxSpeed = 180;
-car2.driver = new Object();
-car2.driver.name = "Devil Of Purple Lightnings";
-car2.driver.category = "B";
-car2.driver["personal limitations"] = null;
-car2.tuning = false;
-car2["number of accidents"] = 2;
-car2.drive = function(){
+car2 = {
+    color: "black",
+    maxSpeed: 180,
+    driver : {
+        name : "Devil Of Purple Lightnings",
+        category : "B",
+        ["personal limitations"] : null,
+    },
+    tuning : false,
+    ["number of accidents"] : 2,
+}
+car2.drive = function () {
     if(this.driver["personal limitations"] == null){
         console.log("I can drive anytime");
     }else{
@@ -44,21 +46,20 @@ function Truck(color, weight, avgSpeed, brand, model) {
     this.avgSpeed = avgSpeed;
     this.brand = brand;
     this.model = model;
-    this.driver = null;
+    this.trip = function () {
+        if (this.driver === null) {
+            console.log("No driver assigned");
+        } else {
+            let message = `Driver ${this.driver.name}`;
+            message += this.driver.nightDriving ? " drives at night" : " does not drive at night";
+            message += ` and has ${this.driver.experience} years of experience.`;
+            console.log(message);
+        }
+    }
 }
 Truck.prototype.AssignDriver = function(name, nightDriving, experience){
     this.driver = {name, nightDriving, experience};
 }
-Truck.prototype.trip = function() {
-    if (this.driver === null) {
-        console.log("No driver assigned");
-    } else {
-        let message = `Driver ${this.driver.name}`;
-        message += this.driver.nightDriving ? " drives at night" : " does not drive at night";
-        message += ` and has ${this.driver.experience} years of experience.`;
-        console.log(message);
-    }
-};
 
 truck1 = new Truck("purple", 1000, 120, "nothing", "nothing")
 truck1.AssignDriver("Devil Of Purple Lightnings", 0, 10);
@@ -100,7 +101,7 @@ console.log(square);
 square.lenght();
 square.square();
 square.info();
-// --------- Завдання 1.2.16-1.2.19 ---------
+// --------- Завдання 1.2.16-1.2.17 ---------
 class Rectangle extends Square{
     constructor(a,b) {
         super(a);
@@ -126,6 +127,26 @@ class Rectangle extends Square{
         console.log("Периметр: " + (this.a*2+this.b*2));
         console.log("Площа: " + this.a*this.b)
     }
+    get a() {
+        return this._a;
+    }
+    set a(value) {
+        if (value < 0) {
+            return ("Error");
+        } else {
+            this._a = value;
+        }
+    }
+    get b() {
+        return this._b;
+    }
+    set b(value) {
+        if (value < 0) {
+            return ("Error");
+        } else {
+            this._b = value;
+        }
+    }
 }
 Rectangle.help();
 rectangle = new Rectangle(10, 5);
@@ -133,8 +154,7 @@ console.log(rectangle);
 rectangle.lenght();
 rectangle.square();
 rectangle.info();
-// --------- Завдання 1.2.20-1.2.24 ---------
-//1.2.18 and 1.2.19
+// --------- Завдання 1.2.18-1.2.19 ---------
 class Rhombus extends Square
 {
     alpha =0;
@@ -146,69 +166,120 @@ class Rhombus extends Square
     }
     static help = function()
     {
-        console.log("Ромб - геометрична фігура, яка має 4 рівні сторони, кут між якими НЕ дорівнює 90 градусів. Протилежні кути рівні");
+        console.log("Ромб — це чотирикутник, у якого всі сторони рівні. Основні властивості ромба:");
+        console.log("1. Усі сторони рівні.");
+        console.log("2. Протилежні кути рівні.");
+        console.log("3. Діагоналі перетинаються під прямим кутом і ділять ромб на чотири рівні прямокутні трикутники.");
+        console.log("4. Діагоналі є осьовими симетріями і ділять ромб на дві рівні частини.");
+
     }
 
     length(){
-        console.log(`Сума довжин сторін = ${4*this.a}`);
+        console.log(this.a*4);
     }
 
     square(){
-        console.log(`Площа Ромб = ${this.a*this.a*Math.sin(this.beta*Math.PI/180)}`);
+        console.log(this.a*this.a*Math.sin(this.beta*Math.PI/180));
     }
 
     info(){
-        console.log(`Довжина кожної сторони = ${this.a}`);
-        console.log(`Значення 2 з 4 кутів = ${this.alpha}`);
-        console.log(`Значення інших 2 з 4 кутів = ${this.beta}`);
-        this.length();
-        this.square();
+        console.log("Довжина кожної сторони = " + this.a);
+        console.log("Значення 2 з 4 кутів = " + this.alpha);
+        console.log("Значення інших 2 з 4 кутів = " + this.beta);
+        console.log("Cумма довжин всіх сторін = " + this.a * 4);
+        console.log("Площа = " + this.a * this.a * Math.sin(this.beta * Math.PI / 180));
     }
 }
 Rhombus.help();
 rhombus = new Rhombus(10, 30, 60);
 console.log(rhombus);
-console.log(rhombus.lenght());
-console.log(rhombus.square());
-console.log(rhombus.info());
-class Parallelogram extends Rhombus
-{
-    b=0;
-    constructor(a, b, alpha, beta){
+rhombus.lenght();
+rhombus.square();
+rhombus.info();
+// --------- Завдання 1.2.20-1.2.21 ---------
+class Parallelogram extends Rhombus {
+    b = 0;
+    constructor(a, b, alpha, beta) {
         super(a, alpha, beta);
         this.b = b;
     }
 
-    static help = function(){
-        console.log("Паралелограм — чотирикутник, протилежні сторони якого попарно паралельні, тобто лежать на паралельних прямих.");
+    static help = function () {
+        console.log("Паралелограм — це чотирикутник, у якому протилежні сторони паралельні та рівні за довжиною. Основні властивості паралелограма:");
+        console.log("1. Протилежні сторони рівні та паралельні.");
+        console.log("2. Протилежні кути рівні.");
+        console.log("3. Діагоналі перетинаються в середині, але не обов'язково перетинаються під прямим кутом.");
+        console.log("4. Діагоналі є осьовими симетріями і ділять ромб на дві рівні частини.");
     }
 
-    length(){
-        return 2 * (this.a + this.b);
+    length() {
+        console.log(2 * (this.a + this.b));
     }
 
-    square(){
-        return this.a * this.b * Math.sin(this.beta * (Math.PI / 180));
+    square() {
+        console.log(this.a * this.b * Math.sin(this.beta * (Math.PI / 180)));
     }
 
-    info(){
-        console.log(`Довжина 2 з 4 сторін = ${this.a}`);
-        console.log(`Довжина інших 2 з 4 сторін = ${this.b}`);
-        console.log(`Значення 2 з 4 кутів = ${this.alpha}`);
-        console.log(`Значення інших 2 з 4 кутів = ${this.beta}`);
-        this.length();
-        this.square();
+    info() {
+        console.log("Довжина 2 з 4 сторін = " + this.a);
+        console.log("Довжина інших 2 з 4 сторін = " + this.b);
+        console.log("Значення 2 з 4 кутів = " + this.alpha);
+        console.log("Значення інших 2 з 4 кутів = " + this.beta);
+        console.log("Cумма довжин всіх сторін = " + (this.a +this.b * 2));
+        console.log("Площа = " + (this.a * this.b * Math.sin(this.beta * Math.PI / 180)));
     }
 }
-//1.2.23
 Parallelogram.help();
-parallelogram = new Parallelogram(10, 30, 60);
+parallelogram = new Parallelogram(10, 5, 30, 60);
 console.log(parallelogram);
-console.log(parallelogram.lenght());
-console.log(parallelogram.square());
-console.log(parallelogram.info());
+parallelogram.lenght();
+parallelogram.square();
+parallelogram.info();
 // --------- Завдання 1.2.25-1.2.26 ---------
-
+function Triangular(a = 3, b = 4, c = 5) {
+    return {a, b, c}
+}
+console.log(Triangular());
+console.log(Triangular(2));
+console.log(Triangular(2,3));
 // --------- Завдання 1.2.27-1.2.28 ---------
-
+function PiMultiplier(a) {
+    return function () {
+        return Math.PI * a;
+    }
+}
+pm1 = PiMultiplier(2);
+pm2 = PiMultiplier(2 / 3);
+pm3 = PiMultiplier(1 / 2);
+console.log(pm1());
+console.log(pm2());
+console.log(pm3());
 // --------- Завдання 1.2.29-1.2.31 ---------
+function Painter(color) {
+    return function (obj) {
+        console.log(obj.type ? `Color: ${color}, Type: ${obj.type}` : "No 'type' property occurred!");
+    };
+}
+
+PaintBlue = Painter("Blue");
+PaintRed = Painter("Red");
+PaintYellow = Painter("Yellow");
+
+obj1 = {
+    maxSpeed: 280,
+    type : "Sportcar",
+    color : "magenta",
+}
+obj2 = {
+    type: "Truck",
+    avgSpeed: 90,
+    ["avg capacity"]:2400
+}
+obj3 = {
+    maxSpeed: 180,
+    color: "purple",
+    isCar: true,
+}
+PaintBlue(obj1);
+PaintRed(obj2);
+PaintYellow(obj3);
