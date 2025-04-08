@@ -5,8 +5,7 @@ jsLibrary.swapSort = function (mas, flag = false) {
 	if (mas.length <= 1) return mas;
 	for (let i = 0; i < mas.length; i++) {
 		if(mas[i] == undefined){
-			console.log("I don't want to work with this array.")
-			return;
+			mas[i] = 0;
 		}
 	}
 	let count_check = 0;
@@ -39,8 +38,7 @@ jsLibrary.minSort = function (mas, flag = false) {
 	if (mas.length <= 1) return mas;
 	for (let i = 0; i < mas.length; i++) {
 		if(mas[i] == undefined){
-			console.log("I don't want to work with this array.")
-			return;
+			mas[i] = 0;
 		}
 	}
 	let count_check = 0;
@@ -72,8 +70,7 @@ jsLibrary.insertionSort = function (mas, flag = false) {
 	if (mas.length <= 1) return mas;
 	for (let i = 0; i < mas.length; i++) {
 		if(mas[i] == undefined){
-			console.log("I don't want to work with this array.")
-			return;
+			mas[i] = 0;
 		}
 	}
 	let count_check = 0;
@@ -106,8 +103,7 @@ jsLibrary.shellSort = function(mas, flag = false) {
 	if (mas.length <= 1) return mas;
 	for (let i = 0; i < mas.length; i++) {
 		if(mas[i] == undefined){
-			console.log("I don't want to work with this array.")
-			return;
+			mas[i] = 0;
 		}
 	}
 	let count_check = 0;
@@ -146,8 +142,7 @@ jsLibrary.quickSort = function (mas, flag = false) {
 	if (mas.length <= 1) return mas;
 	for (let i = 0; i < mas.length; i++) {
 		if(mas[i] == undefined){
-			console.log("I don't want to work with this array.")
-			return;
+			mas[i] = 0;
 		}
 	}
 	let temp = mas[mas.length - 1];
