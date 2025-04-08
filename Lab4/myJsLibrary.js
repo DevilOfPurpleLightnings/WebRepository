@@ -1,4 +1,4 @@
-var jsLibrary = {};
+let jsLibrary = {};
 
 //Сортування обміном
 jsLibrary.swapSort = function (mas, flag = false) {
@@ -96,7 +96,7 @@ jsLibrary.insertionSort = function (mas, flag = false) {
 		mas[j + 1] = temp;
 		count_swap++;
 	}
-	console.log(`Сортування методом мінімальних елементів. Кількість порівняннь = ${count_check}, кількість перестановок = ${count_swap}`);
+	console.log(`Сортування методом вставки. Кількість порівняннь = ${count_check}, кількість перестановок = ${count_swap}`);
 }
 //Cортування Шелла
 jsLibrary.shellSort = function(mas, flag = false) {
@@ -141,22 +141,38 @@ jsLibrary.shellSort = function(mas, flag = false) {
 jsLibrary.quickSort = function (mas, flag = false) {
 	if (mas.length <= 1) return mas;
 	for (let i = 0; i < mas.length; i++) {
-		if(mas[i] == undefined){
+		if (mas[i] == undefined) {
 			mas[i] = 0;
 		}
 	}
+	if (this.arraylenght === undefined) {
+		this.count_check = 0;
+		this.count_swap = 0;
+		this.arraylenght = mas.length;
+	}
+
 	let temp = mas[mas.length - 1];
 	let left = [];
 	let right = [];
 
 	for (let i = 0; i < mas.length - 1; i++) {
-		if(flag){
-				if (mas[i] < temp) left.push(mas[i]);
+		if (flag) {
+			if (mas[i] < temp) left.push(mas[i]);
 			else right.push(mas[i]);
-		}else{
+		} else {
 			if (mas[i] > temp) left.push(mas[i]);
-			else right.push(mas[i]);	
+			else right.push(mas[i]);
 		}
+		this.count_check++;
+		this.count_swap++;
 	}
-	return [...jsLibrary.quickSort(left), temp, ...jsLibrary.quickSort(right)];
+	rezult = [...jsLibrary.quickSort(left, flag), temp, ...jsLibrary.quickSort(right, flag)];
+	this.count_swap++;
+	if (mas.length === this.arraylenght) {
+		console.log(`Швидке сортування. Кількість порівняннь = ${this.count_check}, кількість перестановок = ${this.count_swap}`);
+		this.count_check = 0;
+		this.count_swap = 0;
+		this.arraylenght = undefined;
+	}
+	return rezult;
 }
