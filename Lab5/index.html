@@ -4,11 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab5</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>Sadly.</p>
-    <script src="myJsLibrary.js" async="async" id="libsAndPartialsScript"></script> 
-    <script src="error.js" async="async" id="libsAndPartialsScript"></script>
+    <H1>Гра Клікер</H1>
+    <div id="setup">
+        <label for="difficulty">Виберіть складність:</label>
+        <select id="difficulty">
+            <option value="lazy">Новичок (8 секунд)</option>
+            <option value="normal">Сталкер (4 секунди)</option>
+            <option value="hard">Ветеран (2 секунди)</option>
+            <option value="brutal">Майстер ( ¯\_( ͡❛ ‿ ͡❛)_/¯ )</option>
+        </select>
+        <br><br>
+        <label for="color">Виберіть колір блоку:</label>
+        <select id="color">
+            <option value="black">Чорний</option>
+            <option value="purple">Фіолетовий</option>
+            <option value="blue">Синій</option>
+            <option value="red">Червоний</option>
+        </select>
+        <br><br>
+        <button id="start-button">Старт</button>
+    </div>
+    <div id ="game-setup">
+        <p>Рахунок: <span id="score">0</span></p>
+        <p>Час до кліку: <span id="time-left">0</span> секунд</p>
+    </div>
+    <div id="game-container">
+        <div id="block"></div>
+    </div>
+    <script src="error.js"></script>
 </body>
 </html>
