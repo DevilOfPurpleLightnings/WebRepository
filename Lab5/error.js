@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const gameDiv = document.getElementById('game-setup');
     const gameContainer = document.getElementById('game-container');
     const block = document.getElementById('block');
-    const scoreSpan = document.getElementById('score');-
+    const scoreSpan = document.getElementById('score');
     const timeLeftSpan = document.getElementById('time-left');
 
     let score = 0;
