@@ -35,7 +35,21 @@ fetch(url)
     }, 1000);
     game = true;
     painting();
-    attachEvents();
+    cells.forEach(cell => {
+      const row = parseInt(cell.dataset.row);
+      const col = parseInt(cell.dataset.col);
+      cell.addEventListener('click', () => {
+        if(game){
+          clickCount++;
+          lastmove_row.push(row);
+          lastmove_col.push(col);
+          changeCounter()
+          move(row, col)
+          paining();
+          checkWin()
+        }
+      });
+    });
     updateTarget();
   })
   .catch(err => {
@@ -77,21 +91,6 @@ function move(row, col){
       checkCellEvent(row-1, col);
       checkCellEvent(row-1, col-1);
 }
-cells.forEach(cell => {
-    const row = parseInt(cell.dataset.row);
-    const col = parseInt(cell.dataset.col);
-    cell.addEventListener('click', () => {
-      if(game){
-        clickCount++;
-        lastmove_row.push(row);
-        lastmove_col.push(col);
-        changeCounter()
-        move(row, col)
-        paining();
-        checkWin()
-      }
-    });
-});
 restart.addEventListener('click', ()=>{
   location.reload();
 })
