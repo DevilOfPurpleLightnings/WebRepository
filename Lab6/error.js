@@ -1,6 +1,6 @@
 const variants = ['variation1.json', 'variation2.json', 'variation3.json'];
 const fileName = variants[Math.floor(Math.random() * variants.length)];
-const url = `C:/Users/Admin/Desktop/Lab6/data/${fileName}`;
+const url = `data/${fileName}`;
 const cells = document.querySelectorAll('.cell');
 const message = document.getElementById('message');
 const restart = document.getElementById('restart');
