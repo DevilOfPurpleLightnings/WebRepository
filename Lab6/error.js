@@ -105,7 +105,7 @@ moveBack.addEventListener('click', ()=>{
       lastmove_col.pop();
       changeCounter()
       move(row, col)
-      paining();
+      painting();
     }
   }
 })
