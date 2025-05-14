@@ -46,7 +46,7 @@ fetch(url)
 function updateTarget(){
   targetT.textContent = 'Ціль: ' + target;
 }
-function paining(){
+function painting(){
   cells.forEach(cell =>{
     const row = parseInt(cell.dataset.row);
     const col = parseInt(cell.dataset.col);
