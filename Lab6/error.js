@@ -21,6 +21,7 @@ fetch(url)
   .then(data => {
     grid = data.grid;
     target = data.target;
+    console.log(grid);
     clickCount = 0;
     lastmove_row = [];
     lastmove_col = [];
