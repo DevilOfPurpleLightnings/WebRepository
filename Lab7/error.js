@@ -39,11 +39,14 @@ function openCategories(){
           //Добавлення каталогу товарів
           const spec_el = document.createElement("div");
           spec_el.id = "catalog";
+          const catalog_title = document.createElement("h2");
+          catalog_item.textContent = `Категорія: ${data_category.category}`
+          spec_el.appendChild(catalog_title);
           document.getElementById("mainblock").appendChild(spec_el);
 
           for(item of data_category.items){
             const catalog_item = document.createElement("div");
-            const title = document.createElement("h2");
+            const title = document.createElement("h3");
             const description = document.createElement("p");
             const price = document.createElement("p");
             const img = document.createElement('img');
