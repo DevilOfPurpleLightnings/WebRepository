@@ -1,5 +1,5 @@
 {
-    "category": "PC",
+    "category": "Laptop",
     "items": [
         { "id": 1, "name": "Ноутбук ACER Nitro V 16 ANV16-41-R6A0", "shortname": "acer", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "57 999₴", "image": "images/laptops/Acer1.jpg" },
         { "id": 2, "name": "ASUS TUF Gaming A15", "shortname": "pavilion", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "22 199₴", "image": "images/laptops/Tuf.jpg" },
