@@ -28,7 +28,7 @@ function openCategories(){
       button.addEventListener('click', () => {
         fetch(`data/${category.shortname}.json`)
         .then(response => response.json())
-        .then(data => {
+        .then(data_category => {
           //Видаляємо категорії
           let check_element = document.getElementById("categories");
           if(check_element) check_element.remove();
@@ -41,7 +41,7 @@ function openCategories(){
           spec_el.id = "catalog";
           document.getElementById("mainblock").appendChild(spec_el);
 
-          for(item of data.items){
+          for(item of data_category.items){
             const catalog_item = document.createElement("div");
             const title = document.createElement("h2");
             const description = document.createElement("p");
