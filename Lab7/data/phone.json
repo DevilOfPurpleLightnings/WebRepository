@@ -1,5 +1,5 @@
 {
-    "category": "phone",
+    "category": "Laptop",
     "items": [
         { "id": 1, "name": "Nokia 3310", "shortname": "nokia", "description": "Титан. Невбивана реліквія.", "price": "2 180₴", "image": "images/phone/Nokia.jpg" },
         { "id": 2, "name": "Samsung Galaxy S24 FE", "shortname": "samsung", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "28 999₴", "image": "images/phone/Samsung.jpg" },
