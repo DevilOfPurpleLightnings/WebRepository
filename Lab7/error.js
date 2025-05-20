@@ -40,7 +40,7 @@ function openCategories(){
           const spec_el = document.createElement("div");
           spec_el.id = "catalog";
           const catalog_title = document.createElement("h2");
-          catalog_item.textContent = `Категорія: ${data_category.category}`
+          catalog_title.textContent = `Категорія: ${data_category.category}`
           spec_el.appendChild(catalog_title);
 
           for(item of data_category.items){
