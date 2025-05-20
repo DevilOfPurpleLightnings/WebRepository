@@ -30,47 +30,54 @@ function openCategories(){
     document.getElementById("mainblock").appendChild(el);
 
     //Створюємо та добавляжмо кнопки категорій =_=
-    for(category of categories){
+    for(let category of categories){
       const button = document.createElement("button");
       button.textContent = category.name;
       el.appendChild(button);
 
       //Клік-лістенер
       button.addEventListener('click', () => {
-        console.log("Open category catalog");
-        //Видаляємо категорії
-        let check_element = document.getElementById("categories");
-        if(check_element) check_element.remove();
-        else return;
+        fetch(`data/${cName}.json`)
+        .then(response => response.json())
+        .then(data => {
+          //Видаляємо категорії
+          let check_element = document.getElementById("categories");
+          if(check_element) check_element.remove();
+          else return;
 
-        //Добавлення каталогу товарів
-        const spec_el = document.createElement("div");
-        spec_el.id = "catalog";
-        document.getElementById("mainblock").appendChild(spec_el);
+          console.log("Open category catalog");
 
-        for(item of laptops.items){
-          const catalog_item = document.createElement("div");
-          const title = document.createElement("h2");
-          const description = document.createElement("p");
-          const price = document.createElement("p");
-          const img = document.createElement('img');
+          //Добавлення каталогу товарів
+          const spec_el = document.createElement("div");
+          spec_el.id = "catalog";
+          document.getElementById("mainblock").appendChild(spec_el);
 
-          title.textContent = item.name;
-          description.textContent = item.description;
-          price.textContent = "Price: " + item.price;
-          img.src = item.image;
-          catalog_item.classList.add("catalog_item");
+          for(item of data.items){
+            const catalog_item = document.createElement("div");
+            const title = document.createElement("h2");
+            const description = document.createElement("p");
+            const price = document.createElement("p");
+            const img = document.createElement('img');
 
-          catalog_item.appendChild(img);
-          catalog_item.appendChild(title);
-          catalog_item.appendChild(description);
-          catalog_item.appendChild(price);
-          spec_el.appendChild(catalog_item);
-        }
+            title.textContent = item.name;
+            description.textContent = item.description;
+            price.textContent = "Price: " + item.price;
+            img.src = item.image;
+            catalog_item.classList.add("catalog_item");
+
+            catalog_item.appendChild(img);
+            catalog_item.appendChild(title);
+            catalog_item.appendChild(description);
+            catalog_item.appendChild(price);
+            spec_el.appendChild(catalog_item);
+          }
+        }).catch(err => {
+          console.error('Помилка завантаження JSON');
+          console.error(err);
+        });
       });
     }
-  })
-  .catch(err => {
+  }).catch(err => {
     console.error('Помилка завантаження JSON');
     console.error(err);
   });
