@@ -1,9 +1,9 @@
 {
     "category": "PC",
     "items": [
-        { "id": 1, "name": "HP OMEN 40L Desktop GT21-2000ua (B22CTEA)", "shortname": "hp", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "212 099₴", "image": "images/PC/HP.jpg" },
-        { "id": 2, "name": "ARTLINE Gaming DRGN (DRGNv53)", "shortname": "artline", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "75 265₴", "image": "images/PC/Artline.jpg" },
-        { "id": 3, "name": "Lenovo Legion T5 i7-13650HX", "shortname": "fe", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "57 957₴", "image": "images/PC/Lenovo.jpg" },
-        { "id": 4, "name": "COBRA Advanced (A56.16.S10.46.18640)", "shortname": "cobra", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "33 599₴", "image": "images/PC/Cobra.jpg" }
+        { "id": 1, "name": "HP OMEN 40L Desktop GT21-2000ua (B22CTEA)", "shortname": "hp", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "212 099₴", "image": "images/pc/HP.jpg" },
+        { "id": 2, "name": "ARTLINE Gaming DRGN (DRGNv53)", "shortname": "artline", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "75 265₴", "image": "images/pc/Artline.jpg" },
+        { "id": 3, "name": "Lenovo Legion T5 i7-13650HX", "shortname": "fe", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "57 957₴", "image": "images/pc/Lenovo.jpg" },
+        { "id": 4, "name": "COBRA Advanced (A56.16.S10.46.18640)", "shortname": "cobra", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "33 599₴", "image": "images/pc/Cobra.jpg" }
     ]
 }
