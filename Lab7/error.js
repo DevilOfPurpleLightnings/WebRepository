@@ -1,16 +1,5 @@
 const url = `data/categories.json`;
 
-let categories = [];
-
-let laptops = {
-  "category": "Laptop",
-  "items": [
-    { "id": 201, "name": "Ноутбук ACER Nitro V 16 ANV16-41-R6A0", "shortname": "acer", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "57 999₴", "image": "a" },
-    { "id": 202, "name": "ASUS TUF Gaming A15", "shortname": "pavilion", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "22 199₴", "image": "b" },
-    { "id": 203, "name": "Microsoft Surface Laptop 6 (ZLU-00026) Platinum", "shortname": "fe", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "144 351₴", "image": "c" },
-    { "id": 204, "name": "Gigabyte Aorus Master 16 BYHC5UAE65SH Dark Tide", "shortname": "noname", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "174 999₴", "image": "d" }
-  ]
-}
 function openCategories(){
   //Провіряємо на наявність категорій
   if(document.getElementById("categories")) return;
