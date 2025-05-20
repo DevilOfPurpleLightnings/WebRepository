@@ -26,7 +26,7 @@ function openCategories(){
 
       //Клік-лістенер
       button.addEventListener('click', () => {
-        fetch(`data/${category.name}.json`)
+        fetch(`data/${category.shortname}.json`)
         .then(response => response.json())
         .then(data => {
           //Видаляємо категорії
