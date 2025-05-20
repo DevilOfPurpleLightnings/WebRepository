@@ -42,7 +42,6 @@ function openCategories(){
           const catalog_title = document.createElement("h2");
           catalog_item.textContent = `Категорія: ${data_category.category}`
           spec_el.appendChild(catalog_title);
-          document.getElementById("mainblock").appendChild(spec_el);
 
           for(item of data_category.items){
             const catalog_item = document.createElement("div");
@@ -63,6 +62,7 @@ function openCategories(){
             catalog_item.appendChild(price);
             spec_el.appendChild(catalog_item);
           }
+          document.getElementById("mainblock").appendChild(spec_el);
         }).catch(err => {
           console.error('Помилка завантаження JSON');
           console.error(err);
