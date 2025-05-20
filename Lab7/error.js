@@ -1,4 +1,4 @@
-const url = `/data/categories.json`;
+const url = `data/categories.json`;
 
 let categories = [];
 
