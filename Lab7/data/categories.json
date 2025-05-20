@@ -1,5 +1,5 @@
 [
   { "id": 1, "name": "PC", "shortname": "comps", "notes": "Персональні компи" },
   { "id": 2, "name": "Laptop", "shortname": "laptops", "notes": "Ноутбуки" },
-  { "id": 3, "name": "Mobile", "shortname": "mobile", "notes": "Телефони" }
+  { "id": 3, "name": "Phone", "shortname": "phone", "notes": "Телефони" }
 ]
