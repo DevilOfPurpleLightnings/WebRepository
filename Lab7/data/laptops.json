@@ -1,9 +1,9 @@
 {
-  "category": "Laptop",
-  "items": [
-    { "id": 201, "name": "Ноутбук ACER Nitro V 16 ANV16-41-R6A0", "shortname": "acer", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "57 999₴", "image": "images/laptops/Acer1.jpg" },
-    { "id": 202, "name": "ASUS TUF Gaming A15", "shortname": "pavilion", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "22 199₴", "image": "images/laptops/Tuf.jpg" },
-    { "id": 203, "name": "Microsoft Surface Laptop 6 (ZLU-00026) Platinum", "shortname": "fe", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "144 351₴", "image": "images/laptops/Microsoft.jpg" },
-    { "id": 204, "name": "Gigabyte Aorus Master 16 BYHC5UAE65SH Dark Tide", "shortname": "noname", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "174 999₴", "image": "images/laptops/Gigabite.jpg" }
-  ]
+    "category": "PC",
+    "items": [
+        { "id": 1, "name": "HP OMEN 40L Desktop GT21-2000ua (B22CTEA)", "shortname": "hp", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "212 099₴", "image": "images/PC/HP.jpg" },
+        { "id": 2, "name": "ARTLINE Gaming DRGN (DRGNv53)", "shortname": "artline", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "75 265₴", "image": "images/PC/Artline.jpg" },
+        { "id": 3, "name": "Lenovo Legion T5 i7-13650HX", "shortname": "fe", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "57 957₴", "image": "images/PC/Lenovo.jpg" },
+        { "id": 4, "name": "COBRA Advanced (A56.16.S10.46.18640)", "shortname": "cobra", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "price": "33 599₴", "image": "images/PC/Cobra.jpg" }
+    ]
 }
