@@ -36,7 +36,7 @@ fetch(url)
     }, 1000);
     game = true;
     painting();
-    for(let cell in cells){
+    for(let cell of cells){
       const row = parseInt(cell.dataset.row);
       const col = parseInt(cell.dataset.col);
       cell.addEventListener('click', () => {
@@ -62,7 +62,7 @@ function updateTarget(){
   targetT.textContent = 'Ціль: ' + target;
 }
 function painting(){
-  cells.forEach(cell =>{
+  for(let cell of cells){
     const row = parseInt(cell.dataset.row);
     const col = parseInt(cell.dataset.col);
     if(grid[row][col] === 0) {
@@ -70,7 +70,7 @@ function painting(){
     }else{
       cell.classList.add('on');
     }
-  })
+  }
 }
 
 function checkCellEvent(row, col){
