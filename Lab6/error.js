@@ -36,7 +36,7 @@ fetch(url)
     }, 1000);
     game = true;
     painting();
-    for(len cell in cells){
+    for(let cell in cells){
       const row = parseInt(cell.dataset.row);
       const col = parseInt(cell.dataset.col);
       cell.addEventListener('click', () => {
