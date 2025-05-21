@@ -46,7 +46,7 @@ fetch(url)
           lastmove_col.push(col);
           changeCounter()
           move(row, col)
-          paining();
+          painting();
           checkWin()
         }
       });
