@@ -36,7 +36,7 @@ fetch(url)
     }, 1000);
     game = true;
     painting();
-    cells.forEach(cell => {
+    for(len cell in cells){
       const row = parseInt(cell.dataset.row);
       const col = parseInt(cell.dataset.col);
       cell.addEventListener('click', () => {
@@ -50,7 +50,7 @@ fetch(url)
           checkWin()
         }
       });
-    });
+    }
     updateTarget();
   })
   .catch(err => {
