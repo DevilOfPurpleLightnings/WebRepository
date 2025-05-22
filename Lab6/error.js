@@ -105,7 +105,7 @@ restart.addEventListener('click', ()=>{
     }
   }
   timer_counter = 0;
-  move = 0;
+  clickCount = 0;
   timerT.textContent = 'Час ' + timer_counter;
   changeCounter();
   painting();
