@@ -91,17 +91,14 @@ function changeCounter(){
   counter.textContent = 'Кількість ходів: ' + clickCount;
 }
 function move(row, col){
-      checkCellEvent(row+1, col+1);
+
       checkCellEvent(row+1, col);
-      checkCellEvent(row+1, col-1);
-      
+
       checkCellEvent(row, col+1);
       checkCellEvent(row, col);
       checkCellEvent(row, col-1);
       
-      checkCellEvent(row-1, col+1);
       checkCellEvent(row-1, col);
-      checkCellEvent(row-1, col-1);
 }
 newGame.addEventListener('click', ()=>{
   location.reload();
@@ -115,6 +112,8 @@ restart.addEventListener('click', ()=>{
   timer_counter = 0;
   clickCount = 0;
   timerT.textContent = 'Час ' + timer_counter;
+  lastmove_row = [];
+  lastmove_col = [];
   changeCounter();
   painting();
 })
@@ -122,8 +121,8 @@ moveBack.addEventListener('click', ()=>{
   if(game){
       if(lastmove_row.length>0 && lastmove_col.length>0){
       clickCount--;
-      let row = lastmove_row[lastmove_row.length-1]
-      let col = lastmove_col[lastmove_col.length-1]
+      let row = lastmove_row[lastmove_row.length-1];
+      let col = lastmove_col[lastmove_col.length-1];
       lastmove_row.pop();
       lastmove_col.pop();
       changeCounter()
