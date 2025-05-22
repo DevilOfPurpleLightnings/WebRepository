@@ -99,7 +99,11 @@ newGame.addEventListener('click', ()=>{
   location.reload();
 })
 restart.addEventListener('click', ()=>{
-  grid = [...rememberGrid];
+  for (let i = 0; i < rememberGrid.length; i++) {
+    for (let j = 0; j < rememberGrid[i].length; j++) {
+      grid[i][j] = rememberGrid[i][j];
+    }
+  }
   timer_counter = 0;
   move = 0;
   timerT.textContent = 'Час ' + timer_counter;
