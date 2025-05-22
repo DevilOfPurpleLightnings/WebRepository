@@ -21,8 +21,8 @@ let game;
 fetch(url)
   .then(response => response.json())
   .then(data => {
-    rememberGrid = data.grid;
-    grid = data.grid;
+    rememberGrid = [...data.grid];
+    grid = [...data.grid];
     target = data.target;
     console.log(grid);
     clickCount = 0;
@@ -99,7 +99,7 @@ newGame.addEventListener('click', ()=>{
   location.reload();
 })
 restart.addEventListener('click', ()=>{
-  grid = rememberGrid;
+  grid = [...rememberGrid];
   timer_counter = 0;
   move = 0;
   timerT.textContent = 'Час ' + timer_counter;
