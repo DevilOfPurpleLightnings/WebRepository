@@ -4,10 +4,12 @@ const url = `data/${fileName}`;
 const cells = document.querySelectorAll('.cell');
 const message = document.getElementById('message');
 const restart = document.getElementById('restart');
+const newGame = document.getElementById('newGame');
 const moveBack = document.getElementById('moveBack');
 const counter = document.getElementById('counter');
 const timerT = document.getElementById('timer');
 const targetT = document.getElementById('target');
+let rememberGrid;
 let grid;
 let target;
 let clickCount;
@@ -19,6 +21,7 @@ let game;
 fetch(url)
   .then(response => response.json())
   .then(data => {
+    rememberGred = data.grid;
     grid = data.grid;
     target = data.target;
     console.log(grid);
@@ -92,8 +95,13 @@ function move(row, col){
       checkCellEvent(row-1, col);
       checkCellEvent(row-1, col-1);
 }
-restart.addEventListener('click', ()=>{
+newGame.addEventListener('click', ()=>{
   location.reload();
+})
+restart.addEventListener('click', ()=>{
+  grid = rememberGrid;
+  timer_counter = 0;
+  painting();
 })
 moveBack.addEventListener('click', ()=>{
   if(game){
