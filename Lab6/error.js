@@ -21,8 +21,8 @@ let game;
 fetch(url)
   .then(response => response.json())
   .then(data => {
-    rememberGrid = [...data.grid];
-    grid = [...data.grid];
+    rememberGrid = data.grid;
+    grid = data.grid;
     target = data.target;
     console.log(grid);
     clickCount = 0;
