@@ -68,7 +68,56 @@ function openCategories(){
           console.error(err);
         });
       });
+
     }
+      const button = document.createElement("button");
+      button.textContent = "special";
+      el.appendChild(button);
+      let anything = categories[Math.floor(Math.random() * categories.length)];
+      button.addEventListener('click', () => {
+          
+          fetch(`data/${anything.shortname}.json`)
+              .then(response => response.json())
+              .then(data_category => {
+                  //Видаляємо категорії
+                  let check_element = document.getElementById("categories");
+                  if (check_element) check_element.remove();
+                  else return;
+
+                  console.log("Open category catalog");
+
+                  //Добавлення каталогу товарів
+                  const spec_el = document.createElement("div");
+                  spec_el.id = "catalog";
+                  const catalog_title = document.createElement("h2");
+                  catalog_title.textContent = `Категорія: ${data_category.category}`
+                  spec_el.appendChild(catalog_title);
+
+                  for (item of data_category.items) {
+                      const catalog_item = document.createElement("div");
+                      const title = document.createElement("h3");
+                      const description = document.createElement("p");
+                      const price = document.createElement("p");
+                      const img = document.createElement('img');
+
+                      title.textContent = item.name;
+                      description.textContent = item.description;
+                      price.textContent = "Price: " + item.price;
+                      img.src = item.image;
+                      catalog_item.classList.add("catalog_item");
+
+                      catalog_item.appendChild(img);
+                      catalog_item.appendChild(title);
+                      catalog_item.appendChild(description);
+                      catalog_item.appendChild(price);
+                      spec_el.appendChild(catalog_item);
+                  }
+                  document.getElementById("mainblock").appendChild(spec_el);
+              }).catch(err => {
+                  console.error('Помилка завантаження JSON');
+                  console.error(err);
+              });
+      });
   }).catch(err => {
     console.error('Помилка завантаження JSON');
     console.error(err);
