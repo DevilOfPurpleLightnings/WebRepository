@@ -21,7 +21,7 @@ let game;
 fetch(url)
   .then(response => response.json())
   .then(data => {
-    rememberGred = data.grid;
+    rememberGrid = data.grid;
     grid = data.grid;
     target = data.target;
     console.log(grid);
@@ -101,6 +101,8 @@ newGame.addEventListener('click', ()=>{
 restart.addEventListener('click', ()=>{
   grid = rememberGrid;
   timer_counter = 0;
+  move = 0;
+  changeCounter();
   painting();
 })
 moveBack.addEventListener('click', ()=>{
