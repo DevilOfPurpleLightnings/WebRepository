@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #232323;
+}
+
+header {
+  background: #333;
+  padding: 20px 30px;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 5px 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav ul li a:hover {
+  color: #ddd;
+}
+
+.carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: opacity 0.5s ease;
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+.carousel-inner img.active {
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.pic {
+  display: flex;
+  justify-content: center;
+}
+.pic img {
+  margin: 10px;
+  max-width: 600px;
+  max-height: 400px;
+}
+
+@media (max-width: 785px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    display: none;
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    background: #333;
+    padding: 20px;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .pic {
+    display: inline;
+  }
+  .img1 {
+    content: url("https://cover.imglib.info/uploads/anime/18746/cover/7c5c6055-a88c-4c60-9011-92d14d2651df.jpg");
+  }
+  .img2 {
+    content: url("https://animespirit.tv/uploads/posts/2020-01/thumbs/1580483221_en5c6qcwaaeznle.jpg");
+  }
+  .img3 {
+    content: url("https://i.pinimg.com/736x/42/0c/b6/420cb6b4ce9f9b4f2b69005954d44363.jpg");
+  }
+}
