@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "ВСС «Вінторєз»",
+    "description": {
+      "text1": "asdfg",
+      "image1": "asdfsdf",
+      "text2": "sadfsdaf"
+    }
+  },
+  {
+    "id": 1,
+    "name": "ВСС «Вінторєз»",
+    "description": {
+      "text1": "asdfg",
+      "image1": "asdfsdf",
+      "text2": "sadfsdaf"
+    }
+  },
+  {
+    "id": 1,
+    "name": "ВСС «Вінторєз»",
+    "description": {
+      "text1": "asdfg",
+      "image1": "asdfsdf",
+      "text2": "sadfsdaf"
+    }
+  }
+]

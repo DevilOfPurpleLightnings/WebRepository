@@ -1,0 +1,11 @@
+[
+  { "id": 1, "name": "Зброя", "dataname": "weapons.json"},
+  { "id": 2, "name": "Броня", "dataname": "armors.json"},
+  { "id": 3, "name": "Персонажі", "dataname": "character.json"},
+  { "id": 4, "name": "Локації", "dataname": "locations.json"},
+  { "id": 5, "name": "Розхідники", "dataname": "consumables.json"},
+  { "id": 6, "name": "Артефакти", "dataname": "artifacts.json"},
+  { "id": 7, "name": "Аномалії", "dataname": "anomalies.json"},
+  { "id": 8, "name": "Завдання", "dataname": "questions.json"},
+  { "id": 9, "name": "Мутанти", "dataname": "mutants.json"}
+]
