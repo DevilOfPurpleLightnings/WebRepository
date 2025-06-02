@@ -10,23 +10,42 @@ document.addEventListener("DOMContentLoaded", () => {
   const images = carousel.querySelectorAll("img");
   const prevBtn = document.querySelector(".carousel-btn.prev");
   const nextBtn = document.querySelector(".carousel-btn.next");
+  const indicatorsContainer = document.querySelector(".carousel-indicators");
   let currentIndex = 0;
   let intervalId;
 
-  function showImage(index) {
+  images.forEach((_, index) => {
+    const indicator = document.createElement("div");
+    indicator.classList.add("carousel-indicator");
+    if (index === 0) indicator.classList.add("active");
+    indicator.addEventListener("click", () => {
+      stopCarousel();
+      currentIndex = index;
+      updateCarousel();
+      startCarousel();
+    });
+    indicatorsContainer.appendChild(indicator);
+  });
+
+  const indicators = document.querySelectorAll(".carousel-indicator");
+
+  function updateCarousel() {
     images.forEach((img, i) => {
-      img.classList.toggle("active", i === index);
+      img.classList.toggle("active", i === currentIndex);
+    });
+    indicators.forEach((indicator, i) => {
+      indicator.classList.toggle("active", i === currentIndex);
     });
   }
 
   function nextImage() {
     currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
+    updateCarousel();
   }
 
   function prevImage() {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
+    updateCarousel();
   }
 
   function startCarousel() {
@@ -37,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(intervalId);
   }
 
-  showImage(currentIndex);
+  updateCarousel();
   startCarousel();
 
   nextBtn.addEventListener("click", () => {
